@@ -21,7 +21,7 @@
                 left: 950px;
             }
             </style>
-            <a href="<?= URL ?>gusuario/registrar " id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
+            <a href="<?= URL ?>gusuario/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
             <table class="table table-bordered table-hover">
               <thead>
                 <th>IDENTIFICACIÓN</th>

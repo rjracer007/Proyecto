@@ -13,7 +13,7 @@
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?= URL ?>dist/css/AdminLTE.css">
+  <link rel="stylesheet" href="<?= URL ?>dist/css/AdminLTE.min.css">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/flat/blue.css">
 
@@ -40,6 +40,8 @@
   <link rel="stylesheet" href="<?= URL ?>plugins/fullcalendar/fullcalendar.min.css">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/fullcalendar/fullcalendar.print.css" media="print">
+
+  <link rel="stylesheet" href="<?= URL ?>plugins/normalize/normalize.css">
 
 
 </head>
@@ -289,8 +291,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?= URL ?>pedido/cliente/index">Clientes</a></li>
-            <li><a href="#">Pedido</a></li>
+            <li><a href="<?= URL ?>cliente/index">Clientes</a></li>
+            <li><a href="<?= URL ?>pedido/index">Pedido</a></li>
           </ul>
         </li>
         <li class="active"><a href="<?= URL ?>lote/index"><i class="glyphicon glyphicon-folder-open"></i> <span>Lote</span></a></li>

@@ -100,7 +100,7 @@
 <!-- jQuery 2.2.3 -->
 
 <!-- Page specific script -->
-<script>
+<script type="text/javascript">
   $(function () {
 
     /* initialize the external events

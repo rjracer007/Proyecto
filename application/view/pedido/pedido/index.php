@@ -11,7 +11,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h1>Clientes Licol S.A.S</h1>
+            <h1>Pedidos Licol S.A.S</h1>
             <br><br><br>
             <style type="text/css">
               #are{
@@ -20,22 +20,20 @@
                 left: 950px;
             }
             </style>
-            <a href="<?= URL ?>cliente/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
+            <a href="<?= URL ?>pedido/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
             <table class="table table-bordered table-hover">
               <thead>
-                <th>Identificacion</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
+                <th>Codigo</th>
+                <th>Fecha</th>
+                <th>Cliente</th>
                 <th>nit</th>
                 <th>OPCIONES</th>
               </thead>
               <tbody>
                 <tr>
                   <td>123456456</td>
-                  <td>Estiven</td>
+                  <td>12/05/2017</td>
                   <td>Garcia Piedrahita</td>
-                  <td>Gefe produccion</td>
-                  <td>Laborando</td>
                   <td>
                     <a href="" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
                     <a href="" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-eye-open"></i></a>
