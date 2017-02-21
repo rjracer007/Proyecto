@@ -23,10 +23,9 @@
             <a href="<?= URL ?>pedido/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
             <table class="table table-bordered table-hover">
               <thead>
-                <th>Codigo</th>
-                <th>Fecha</th>
-                <th>Cliente</th>
-                <th>nit</th>
+                <th>CODIGO</th>
+                <th>FECHA</th>
+                <th>CLIENTE</th>                
                 <th>OPCIONES</th>
               </thead>
               <tbody>

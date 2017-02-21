@@ -19,6 +19,8 @@
 
   <link rel="stylesheet" href="<?= URL ?>plugins/morris/morris.css">
 
+    <link rel="stylesheet" href="<?= URL ?>plugins/datatables/dataTables.bootstrap.css">
+
   <link rel="stylesheet" href="<?= URL ?>plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/datepicker/datepicker3.css">

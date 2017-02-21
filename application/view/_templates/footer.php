@@ -47,6 +47,10 @@
 
 <script src="<?= URL ?>plugins/fastclick/fastclick.js"></script>
 
+<script src="<?= URL ?>plugins/datatables/jquery.dataTables.min.js"></script>
+
+<script src="<?= URL ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
+
 <script src="<?= URL ?>dist/js/app.min.js"></script>
 
 <script src="<?= URL ?>dist/js/pages/dashboard.js"></script>

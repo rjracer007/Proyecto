@@ -2,31 +2,29 @@
   <section class="content">
     <div class="row">
 
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="box box-primary">
+        <center>
         <div class="box-header with-border">
-          <h3 class="box-title">Registro de Empleados</h3>
+          <h3 class="box-title">Registro de Pedidos</h3>
         </div>
+      </center>
         <!-- /.box-header -->
         <!-- form start -->
         <form role="form">
           <div class="box-body">
             <div class="form-group">
-              <label for="exampleInputEmail1">Codigo:</label>
+              <label for="exampleInputEmail1">*Codigo:</label>
               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="introduzca un codigo">
             </div>
-            <div class="form-group">
-              <label>Fecha del Pedido:</label>
-              <div class="input-group date">
-                <div class="input-group-addon">
-                  <i class="fa fa-calendar"></i>
+
+              <div class="form-group">
+                    <label for="exampleInputEmail1">*Fecha de Pedido:</label>
+                    <input type="date" class="form-control" value="<?php echo date("Y-m-d");?>">
                 </div>
-                <input type="text" class="form-control pull-right" id="datepicker">
-              </div>
-              <!-- /.input group -->
-            </div>
+
             <div class="form-group">
-              <label>Cliente:</label>
+              <label>*Cliente:</label>
               <select class="form-control select2" style="width: 100%;">
                 <option selected="selected">Alabama</option>
                 <option>Alaska</option>
@@ -41,10 +39,11 @@
           </div>
           <!-- /.box-body -->
 
-          <div class="box-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Registrar</button>
-          </div>
+
+                    <div class="box-header with-border">
+                       <button value="registrar" class="btn btn-success"  style="background: #3B82DF"  type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
+                       <button value="Cancelar" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
+                    </div>
         </form>
       </div>
 </div>

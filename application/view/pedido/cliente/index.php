@@ -23,10 +23,10 @@
             <a href="<?= URL ?>cliente/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
             <table class="table table-bordered table-hover">
               <thead>
-                <th>Identificacion</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>nit</th>
+                <th>IDENTIFICACÍON</th>
+                <th>NOMBRE</th>
+                <th>APELLIDO</th>
+                <th>NIT</th>
                 <th>OPCIONES</th>
               </thead>
               <tbody>
