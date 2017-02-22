@@ -27,6 +27,8 @@
                 <th>NOMBRE</th>
                 <th>APELLIDO</th>
                 <th>NIT</th>
+                <th>TELÉFONO</th>
+                <th>DIRECCIÓN</th>
                 <th>OPCIONES</th>
               </thead>
               <tbody>
@@ -34,8 +36,9 @@
                   <td>123456456</td>
                   <td>Estiven</td>
                   <td>Garcia Piedrahita</td>
-                  <td>Gefe produccion</td>
-                  <td>Laborando</td>
+                  <td>001</td>
+                  <td>9876543</td>
+                  <td>Calle 7 sur</td>
                   <td>
                     <a href="" class="btn btn-warning btn-sm"><i class="glyphicon glyphicon-pencil"></i></a>
                     <a href="" class="btn btn-info btn-sm"><i class="glyphicon glyphicon-eye-open"></i></a>
