@@ -15,36 +15,35 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= URL ?>dist/css/AdminLTE.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="<?= URL ?>dist/css/skins/_all-skins.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/morris/morris.css">
+    <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/flat/blue.css">
+
+    <link rel="stylesheet" href="<?= URL ?>plugins/morris/morris.css">
+
+    <link rel="stylesheet" href="<?= URL ?>plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+
+    <link rel="stylesheet" href="<?= URL ?>plugins/datepicker/datepicker3.css">
+
+    <link rel="stylesheet" href="<?= URL ?>plugins/daterangepicker/daterangepicker.css">
 
     <link rel="stylesheet" href="<?= URL ?>plugins/datatables/dataTables.bootstrap.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-
-  <link rel="stylesheet" href="<?= URL ?>plugins/datepicker/datepicker3.css">
-
-  <link rel="stylesheet" href="<?= URL ?>plugins/daterangepicker/daterangepicker.css">
-
   <link rel="stylesheet" href="<?= URL ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/all.css">
-
-  <link rel="stylesheet" href="<?= URL ?>plugins/colorpicker/bootstrap-colorpicker.min.css">
+   <link rel="stylesheet" href="<?= URL ?>plugins/colorpicker/bootstrap-colorpicker.min.css">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/timepicker/bootstrap-timepicker.min.css">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/select2/select2.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>dist/css/skins/_all-skins.css">
-  <!-- fullCalendar 2.2.5-->
   <link rel="stylesheet" href="<?= URL ?>plugins/fullcalendar/fullcalendar.min.css">
+
+  <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/all.css">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/fullcalendar/fullcalendar.print.css" media="print">
 
   <link rel="stylesheet" href="<?= URL ?>plugins/normalize/normalize.css">
-
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -307,12 +306,7 @@
             <li><a href="<?= URL ?>pedido/index">Pedido</a></li>
           </ul>
         </li>
-        <li class="active"><a href="<?= URL ?>lote/index"><i class="glyphicon glyphicon-folder-open"></i> <span>Lote</span></a></li>
-        <li>
-          <a href="<?= URL ?>calendario/index">
-            <i class="fa fa-calendar"></i> <span>Calendario</span>
-          </a>
-        </li>
+        <li class="active"><a href="<?= URL ?>lote/index"><i class="glyphicon glyphicon-folder-open"></i> <span>Lote</span></a></li>>
       </ul>
     </section>
     <!-- /.sidebar -->

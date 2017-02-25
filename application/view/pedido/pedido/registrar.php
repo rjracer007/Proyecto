@@ -14,16 +14,19 @@
         <!-- form start -->
         <form role="form">
           <div class="box-body">
+          <div class="col-md-8">
             <div class="form-group">
               <label for="exampleInputEmail1">*Código:</label>
               <input type="email" class="form-control" id="exampleInputEmail1" placeholder="introduzca un codigo">
             </div>
-
+          </div>
+          <div class="col-md-8">
               <div class="form-group">
                     <label for="exampleInputEmail1">*Fecha de Pedido:</label>
                     <input type="date" class="form-control" value="<?php echo date("Y-m-d");?>">
                 </div>
-
+          </div>
+          <div class="col-md-8">
             <div class="form-group">
               <label>*Cliente:</label>
               <select class="form-control select2" style="width: 100%;">
@@ -33,12 +36,15 @@
                 <option>004</option>
               </select>
             </div>
-
-          </div>        <!-- /.box-body -->
+          </div>
+  
+          <div class="col-md-8">     <!-- /.box-body -->
             <div class="box-header with-border">
-              <button value="registrar" class="btn btn-success"  style="background: #3B82DF"  type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
-              <button value="Cancelar" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
+              <button value="registrar" class="btn btn-info" type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
+              <button value="Cancelar" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
             </div>
+            </div>
+                      </div> 
         </form>
       </div>
 </div>

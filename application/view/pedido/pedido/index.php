@@ -1,35 +1,33 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-
-    </section>
-
+  <section class="content-header">
+    <h1>
+      Ramsperbit
+      <small>Licol S.A.S</small>
+    </h1>
+  </section>
     <!-- Main content -->
     <section class="content">
-    <center>
-      <!-- Small boxes (Stat box) -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Pedidos Licol S.A.S</h1>
-            <br><br><br>
-            <style type="text/css">
-              #are{
-                position:absolute;
-                top: 90px;
-                left: 950px;
-            }
-            </style>
-            <a href="<?= URL ?>pedido/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
-            <table class="table table-bordered table-hover">
-              <thead>
-                <th>CÓDIGO</th>
-                <th>FECHA</th>
-                <th>CÓDIGO CLIENTE</th>                
-                <th>OPCIONES</th>
-              </thead>
-              <tbody>
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- /.box -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Pedido</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <a href="<?= URL ?>pedido/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
                 <tr>
+                  <th>CÓDIGO</th>
+                  <th>FECHA</th>
+                  <th>CÓDIGO CLIENTE</th>
+                  <th>OPCIONES</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
                   <td>123456456</td>
                   <td>2017/02/22</td>
                   <td>001</td>
@@ -39,12 +37,27 @@
                     <a href="" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-remove"></i></a>
                   </td>
                 </tr>
-              </tbody>
-            </table>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>CÓDIGO</th>
+                  <th>FECHA</th>
+                  <th>CÓDIGO CLIENTE</th>
+                  <th>OPCIONES</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
         </div>
+        <!-- /.col -->
       </div>
-      </center>
+      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
+
+<!-- ./wrapper -->
+<!-- jQuery 2.2.3 -->

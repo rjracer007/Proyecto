@@ -18,31 +18,22 @@
             </div>
           </div>
           <div class="col-md-8">
-          <div class="form-group">
-              <label for="exampleInputEmail1">*Descripción:</label>
-              <textarea name="comentarios" rows="2" cols="120">Descripción del lote...</textarea>
+            <div class="form-group">
+                <label for="exampleInputEmail1">*Descripción:</label>
+                <textarea name="comentarios" rows="2" cols="115">Descripción del lote...</textarea>
+              </div>
             </div>
-          </div>
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="exampleInputEmail1">*Cantidad:</label>
                   <input type="number" class="form-control" id="exampleInputEmail1" placeholder="Introduzca la cantidad del lote">
                 </div>
               </div>
-        
-        <div class="col-md-8">
-                  <div class="form-group">
-                    <label>*Estado:</label>
-                    <select class="form-control select2" style="width: 100%;">
-                      <option selected="selected">En proceso</option>
-                      <option>Terminado</option>
-                    </select>
-                  </div>
-          </div>
+
           <div class="col-md-8">
                 <div class="box-header with-border">
-                   <button value="registrar" class="btn btn-success"  style="background: #3B82DF"  type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
-                   <button value="Cancelar" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
+                   <button value="registrar" class="btn btn-info" type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
+                   <button value="Cancelar" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
                 </div>
           </div>
           </div>

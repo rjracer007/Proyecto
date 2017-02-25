@@ -27,6 +27,10 @@ class Application
             $page = new Home();
             $page->index();
 
+            //require APP . 'controller/login.php';
+            //$page = new Home();
+            //$page->index();
+
         } elseif (file_exists(APP . 'controller/' . $this->url_controller . '.php')) {
             // here we did check for controller: does such a controller exist ?
 

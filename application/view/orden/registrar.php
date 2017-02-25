@@ -29,16 +29,7 @@
                   <input type="date" class="form-control" value="<?php echo date("Y-m-d");?>">
                 </div>
               </div>
-               <div class="col-md-8">
-                  <div class="form-group">
-                    <label>*Estado:</label>
-                    <select class="form-control select2" style="width: 100%;">
-                      <option selected="selected">En proceso</option>
-                      <option>Empacado</option>
-                      <option>Terminado</option>
-                    </select>
-                  </div>
-          </div>
+      
           <div class="col-md-8">
           <div class="form-group">
               <label for="exampleInputEmail1">*Identificación del Empleado:</label>
@@ -47,8 +38,8 @@
           </div>
           <div class="col-md-8">
                 <div class="box-header with-border">
-                   <button value="registrar" class="btn btn-success"  style="background: #3B82DF"  type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
-                   <button value="Cancelar" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
+                   <button value="registrar" class="btn btn-info" type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
+                   <button value="Cancelar" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
                 </div>
           </div>
         </div>

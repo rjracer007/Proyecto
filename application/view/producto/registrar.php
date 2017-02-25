@@ -20,13 +20,13 @@
               <div class="col-md-8">
                 <div class="form-group">
                   <label for="exampleInputEmail1">*Existencias:</label>
-                  <input type="number" class="form-control">
+                  <input type="number" class="form-control" placeholder="Introduzca las existencias del producto">
                 </div>
               </div>
               <div class="col-md-8">
           <div class="form-group">
               <label for="exampleInputEmail1">*Descripción:</label>
-              <textarea name="comentarios" rows="2" cols="94">Descripción del producto...</textarea>
+              <textarea name="comentarios" rows="2" cols="115">Descripción del producto...</textarea>
             </div>
           </div>
           <div class="col-md-8">
@@ -63,8 +63,8 @@
           </div>
           <div class="col-md-8">
                 <div class="box-header with-border">
-                   <button value="registrar" class="btn btn-success"  style="background: #3B82DF"  type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
-                   <button value="Cancelar" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
+                   <button value="registrar" class="btn btn-info" type="button"><span class="glyphicon glyphicon-ok"></span>Registrar</button>
+                   <button value="Cancelar" class="btn btn-warning"><span class="glyphicon glyphicon-remove"></span>Cancelar</button>
                 </div>
           </div>
         </div>

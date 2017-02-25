@@ -1,35 +1,35 @@
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-
+  <section class="content-header">
+    <h1>
+      Ramsperbit
+      <small>Licol S.A.S</small>
+    </h1>
+  </section>
     <!-- Main content -->
     <section class="content">
-    <center>
-      <!-- Small boxes (Stat box) -->
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h1>Orden Licol S.A.S</h1>
-            <br><br><br>
-            <style type="text/css">
-              #are{
-                position:absolute;
-                top: 90px;
-                left: 950px;
-            }
-            </style>
-            <a href="<?= URL ?>orden/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
-            <table class="table table-bordered table-hover">
-              <thead>
-                <th>CÓDIGO</th>
-                <th>FECHA INICIO</th>
-                <th>FECHA FINALIZACIÓN</th>
-                <th>ESTADO</th>
-                <th>EMPLEADO QUE REGISTRÓ</th>
-                <th>OPCIONES</th>
-                <th></th>
-              </thead>
-              <tbody>
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- /.box -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Orden de Produccion</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <a href="<?= URL ?>orden/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
                 <tr>
+                  <th>CÓDIGO</th>
+                  <th>FECHA INICIO</th>
+                  <th>FECHA FINALIZACIÓN</th>
+                  <th>ESTADO</th>
+                  <th>EMPLEADO QUE REGISTRÓ</th>
+                  <th>OPCIONES</th>
+                </tr>
+                </thead>
+                <tbody>
+                  <tr>
                   <td>001</td>
                   <td>2017-02-22</td>
                   <td>2017-02-28</td>
@@ -41,12 +41,29 @@
                     <a href="" class="btn btn-danger btn-sm"><i class="glyphicon glyphicon-refresh"></i></a>
                   </td>
                 </tr>
-              </tbody>
-            </table>
+                </tbody>
+                <tfoot>
+                <tr>
+                  <th>CÓDIGO</th>
+                  <th>FECHA INICIO</th>
+                  <th>FECHA FINALIZACIÓN</th>
+                  <th>ESTADO</th>
+                  <th>EMPLEADO QUE REGISTRÓ</th>
+                  <th>OPCIONES</th>
+                </tr>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
           </div>
+          <!-- /.box -->
         </div>
+        <!-- /.col -->
       </div>
-      </center>
+      <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
+
+<!-- ./wrapper -->
+<!-- jQuery 2.2.3 -->

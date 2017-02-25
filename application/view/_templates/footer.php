@@ -31,39 +31,29 @@
 
 <script src="<?= URL ?>plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
 
+<script src="<?= URL ?>plugins/select2/select2.full.min.js"></script>
+
 <script src="<?= URL ?>plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
 
-<script src="<?= URL ?>plugins/knob/jquery.knob.js"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-
-<script src="<?= URL ?>plugins/daterangepicker/daterangepicker.js"></script>
-
-<script src="<?= URL ?>plugins/datepicker/bootstrap-datepicker.js"></script>
 
 <script src="<?= URL ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
 
 <script src="<?= URL ?>plugins/slimScroll/jquery.slimscroll.min.js"></script>
 
-<script src="<?= URL ?>plugins/fastclick/fastclick.js"></script>
+<script src="<?= URL ?>plugins/knob/jquery.knob.js"></script>
 
-<script src="<?= URL ?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= URL ?>plugins/daterangepicker/daterangepicker.js"></script>
+
+<script src="<?= URL ?>plugins/datepicker/bootstrap-datepicker.js"></script>
 
 <script src="<?= URL ?>plugins/datatables/dataTables.bootstrap.min.js"></script>
 
+<script src="<?= URL ?>plugins/datatables/jquery.dataTables.min.js"></script>
+
 <script src="<?= URL ?>dist/js/app.min.js"></script>
 
-<script src="<?= URL ?>dist/js/pages/dashboard.js"></script>
-
-<script src="<?= URL ?>dist/js/demo.js"></script>
-
 <script src="<?= URL ?>plugins/fullcalendar/fullcalendar.min.js"></script>
-
-<script src="<?= URL ?>plugins/input-mask/jquery.inputmask.js"></script>
-
-<script src="<?= URL ?>plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
-
-<script src="<?= URL ?>plugins/input-mask/jquery.inputmask.extensions.js"></script>
 
 <script src="<?= URL ?>plugins/colorpicker/bootstrap-colorpicker.min.js"></script>
 
@@ -73,4 +63,14 @@
 
 <script src="<?= URL ?>plugins/fastclick/fastclick.js"></script>
 
-<script src="<?= URL ?>plugins/select2/select2.full.min.js"></script>
+<script src="<?= URL ?>dist/js/pages/dashboard.js"></script>
+
+<script src="<?= URL ?>dist/js/demo.js"></script>
+
+<script src="<?= URL ?>plugins/input-mask/jquery.inputmask.js"></script>
+
+<script src="<?= URL ?>plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+
+<script src="<?= URL ?>plugins/input-mask/jquery.inputmask.extensions.js"></script>
+
+<script src="<?= URL ?>plugins/fastclick/fastclick.js"></script>
