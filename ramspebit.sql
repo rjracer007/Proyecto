@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.6.6
+-- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-03-2017 a las 13:46:12
--- Versión del servidor: 10.1.16-MariaDB
+-- Tiempo de generación: 08-03-2017 a las 00:42:27
+-- Versión del servidor: 5.7.17-log
 -- Versión de PHP: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,20 +24,29 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarCliente` (IN `_idCliente` INT(11))  NO SQL
+DELETE FROM cliente WHERE idCliente = _idCliente$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarGenero` (IN `_idGenero` INT)  NO SQL
 DELETE FROM genero WHERE idGenero = _idGenero$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarPension` (IN `_idPension` INT)  NO SQL
 DELETE FROM pension WHERE idPension = _idPension$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarTipoContrato` (IN `_idTipo_contrato` INT)  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarTipoContrato` (IN `_idTipo_contrato` INT(11))  NO SQL
 DELETE FROM tipo_contrato WHERE idTipo_contrato = _idTipo_contrato$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarCliente` (IN `_idCliente` INT(11), IN `_nombre` VARCHAR(45), IN `_apellidos` VARCHAR(45), IN `_nit` VARCHAR(45), IN `_telefono` VARCHAR(15), IN `_direccion` VARCHAR(45))  NO SQL
+INSERT INTO cliente (idCliente, nombre, apellidos, nit, telefono, direccion) VALUES(_idCliente, _nombre, _apellidos, _nit, _telefono, _direccion)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarCuenta` (IN `_nombre_usuario` VARCHAR(45), IN `_contraseña` VARCHAR(100), IN `_correo_electronico` VARCHAR(100), IN `_imagen` VARCHAR(100), IN `_Rol_idrol` INT(11))  NO SQL
+INSERT INTO cuenta (idCuenta, nombre_usuario, contraseña, correo_electronico, imagen, Rol_idrol) VALUES(_nombre_usuario, _contraseña, _correo_electronico, _imagen, _Rol_idrol)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarEmpleado` (IN `_idEmpleado` INT(11), IN `_nombres` VARCHAR(45), IN `_apellidos` VARCHAR(45), IN `_rh` VARCHAR(45), IN `_celular` INT(11), IN `_fecha_nacimiento` DATE, IN `_correo_electronico` VARCHAR(100), IN `_fecha_ingreso` DATE, IN `_numero_hijos` INT(11), IN `_telefono_fijo` INT(11), IN `_Pension_idPension` INT(11), IN `_Caja_compensacion_idCaja_compensacion` INT(11), IN `_Tipo_contrato_idTipo_contrato` INT(11), IN `_direccion` VARCHAR(45), IN `_barrio` VARCHAR(45), IN `_municipio` VARCHAR(45), IN `_Tipo_documento_idTipo_documento` INT(11), IN `_Genero_idGenero` INT(11), IN `_Cuenta_idCuenta` INT(11), IN `_cesantias` VARCHAR(45), IN `_procesos` VARCHAR(45), IN `_cargo` VARCHAR(45))  NO SQL
 INSERT INTO empleado (idEmpleado, nombres, apellidos, rh, celular, fecha_nacimiento, correo_electronico, fecha_ingreso, numero_hijos, telefono_fijo, Pension_idPension, Caja_compensacion_idCaja_compensacion, Tipo_contrato_idTipo_contrato, direccion, barrio, municipio, Tipo_documento_idTipo_documento, Genero_idGenero, Cuenta_idCuenta, cesantias, procesos, cargo) VALUES (_idEmpleado, _nombres, _apellidos, _rh,_celular,_fecha_nacimiento,_correo_electronico,_fecha_ingreso,_numero_hijos,_telefono_fijo,_Pension_idPension,_Caja_compensacion_idCaja_compensacion,_Tipo_contrato_idTipo_contrato,_direccion,_barrio,_municipio,_Tipo_documento_idTipo_documento,_Genero_idGenero,_Cuenta_idCuenta,_cesantias,_procesos,_cargo)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarEmpleadoEps` (IN `_Empleado_idEmpleado` INT(11), IN `_EPS_idEPS` INT(11))  NO SQL
-insert into empleado_has_eps values (_Empleado_idEmpleado, _EPS_idEPS)$$
+insert into empleado_has_eps (Empleado_idEmpleado, EPS_idEPS) values (_Empleado_idEmpleado, _EPS_idEPS)$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarEmpleadoNivelestudio` (IN `_Nivel_estudio_idNivel_estudio` INT(11), IN `_Empleado_idEmpleado` INT(11))  NO SQL
 INSERT INTO nivel_estudio_has_empleado VALUES (_Nivel_estudio_idNivel_estudio, _Empleado_idEmpleado)$$
@@ -65,6 +74,12 @@ insert INTO tipo_contrato (idTipo_contrato, descripcion) VALUES (_idTipo_contrat
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarTipoDocumento` (IN `_idTipo_documento` INT(11), IN `_descripcion` VARCHAR(45))  NO SQL
 insert into tipo_documento (idTipo_documento, descripcion) VALUES (_idTipo_documento, _descripcion)$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarCliente` ()  NO SQL
+SELECT idCliente, nombre, apellidos, nit, telefono, direccion FROM cliente ORDER BY idCliente DESC$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarCuenta` ()  NO SQL
+SELECT idCuenta, nombre_usuario, correo_electronico, imagen, estado, Rol_idrol  FROM cuenta ORDER BY idCuenta DESC$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarEmpleado` ()  NO SQL
 select idEmpleado,	    
@@ -111,6 +126,12 @@ SELECT idTipo_contrato, descripcion from tipo_contrato$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarTipoDocumento` ()  NO SQL
 SELECT idTipo_documento, descripcion from tipo_documento$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarCliente` (IN `_idCliente` INT(11), IN `_nombre` INT(45), IN `_apellidos` INT(45), IN `_nit` INT(45), IN `_telefono` INT(15), IN `_direccion` INT(45))  NO SQL
+UPDATE cliente SET idCliente = _idCliente, nombre = _nombre, apellidos = _apellidos, nit = _nit, telefono = _telefono, direccion = _direccion WHERE idCliente = _idCliente$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarCuenta` (IN `_nombre_usuario` VARCHAR(45), IN `_contraseña` VARCHAR(100), IN `_correo_electronico` VARCHAR(100), IN `_imagen` VARCHAR(100), IN `_Rol_idrol` INT(11), IN `_idCuenta` INT(11))  NO SQL
+UPDATE cuenta SET nombre_usuario = _nombre_usuario, contraseña = _contraseña, correo_electronico = _correo_electronico, imagen = _imagen, Rol_idrol = _Rol_idrol WHERE idCuenta = _idCuenta$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarEmpleado` (IN `_idEmpleado` INT(11), IN `_nombres` VARCHAR(45), IN `_apellidos` VARCHAR(45), IN `_rh` VARCHAR(45), IN `_celular` INT(11), IN `_fecha_nacimiento` DATE, IN `_correo_electronico` VARCHAR(100), IN `_fecha_ingreso` DATE, IN `_numero_hijos` INT(11), IN `_telefono_fijo` INT(11), IN `_Pension_idPension` INT(11), IN `_Caja_compensacion_idCaja_compensacion` INT(11), IN `_Tipo_contrato_idTipo_contrato` INT(11), IN `_direccion` VARCHAR(45), IN `_barrio` VARCHAR(45), IN `_municipio` VARCHAR(45), IN `_Tipo_documento_idTipo_documento` INT(11), IN `_Genero_idGener` INT(11), IN `_Cuenta_idCuenta` INT(11), IN `_cesantias` VARCHAR(45), IN `_procesos` VARCHAR(45), IN `_cargo` VARCHAR(20))  NO SQL
 UPDATE empleado set nombres = _nombres,	apellidos = _apellidos,	rh = _rh, celular = _celular, fecha_nacimiento = _fecha_nacimiento, correo_electronico = _correo_electronico, fecha_ingreso = _fecha_ingreso, numero_hijos = _numero_hijos,	telefono_fijo = _telefono_fijo,	Pension_idPension = _Pension_idPension,	  Caja_compensacion_idCaja_compensacion = _Caja_compensacion_idCaja_compensacion,	  Tipo_contrato_idTipo_contrato = _Tipo_contrato_idTipo_contrato,	    
@@ -173,6 +194,15 @@ CREATE TABLE `cliente` (
   `telefono` varchar(15) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`idCliente`, `nombre`, `Apellidos`, `nit`, `telefono`, `direccion`) VALUES
+(11, 'Walberto', 'Mercado', '011', '1234567', 'Calle 70'),
+(22, 'Freddy', 'Sadder', '022', '0987654', 'Calle 71'),
+(33, 'Lucho', 'Protesta', '033', '7685940', 'Calle 51');
 
 -- --------------------------------------------------------
 
@@ -403,6 +433,13 @@ CREATE TABLE `pension` (
   `fecha_retiro` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `pension`
+--
+
+INSERT INTO `pension` (`idPension`, `nombre`, `abreviatura`, `fecha_ingreso`, `fecha_retiro`) VALUES
+(1, 'Colpensiones', 'Colp', '2005-12-03', '2015-12-03');
+
 -- --------------------------------------------------------
 
 --
@@ -526,7 +563,9 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`idrol`, `nombre`, `descripcion`, `estado`) VALUES
-(1, 'administrador', 'encargado de todo', 1);
+(1, 'administrador', 'encargado de todo', 1),
+(2, 'supervisor', 'encargado de registrar, modificar y consultar', 1),
+(3, 'empleado', 'solo consultas', 1);
 
 -- --------------------------------------------------------
 
@@ -599,6 +638,14 @@ CREATE TABLE `tipo_contrato` (
   `descripcion` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tipo_contrato`
+--
+
+INSERT INTO `tipo_contrato` (`idTipo_contrato`, `descripcion`) VALUES
+(1, 'Definido'),
+(2, 'Indefinido');
+
 -- --------------------------------------------------------
 
 --
@@ -609,6 +656,13 @@ CREATE TABLE `tipo_documento` (
   `idTipo_documento` int(11) NOT NULL,
   `descripcion` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tipo_documento`
+--
+
+INSERT INTO `tipo_documento` (`idTipo_documento`, `descripcion`) VALUES
+(1233, 'cedula');
 
 -- --------------------------------------------------------
 
@@ -648,7 +702,7 @@ ALTER TABLE `cliente`
 -- Indices de la tabla `cuenta`
 --
 ALTER TABLE `cuenta`
-  ADD PRIMARY KEY (`idCuenta`,`Rol_idrol`),
+  ADD PRIMARY KEY (`idCuenta`),
   ADD KEY `fk_Cuenta_Rol1_idx` (`Rol_idrol`);
 
 --
@@ -663,7 +717,7 @@ ALTER TABLE `detalle_producto_pedido`
 -- Indices de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  ADD PRIMARY KEY (`idEmpleado`,`Pension_idPension`,`Caja_compensacion_idCaja_compensacion`,`Tipo_contrato_idTipo_contrato`,`Tipo_documento_idTipo_documento`,`Genero_idGenero`,`Cuenta_idCuenta`),
+  ADD PRIMARY KEY (`idEmpleado`),
   ADD KEY `fk_Empleado_Pension1_idx` (`Pension_idPension`),
   ADD KEY `fk_Empleado_Caja_compensacion1_idx` (`Caja_compensacion_idCaja_compensacion`),
   ADD KEY `fk_Empleado_Tipo_contrato1_idx` (`Tipo_contrato_idTipo_contrato`),
@@ -675,7 +729,6 @@ ALTER TABLE `empleado`
 -- Indices de la tabla `empleado_has_eps`
 --
 ALTER TABLE `empleado_has_eps`
-  ADD PRIMARY KEY (`Empleado_idEmpleado`,`EPS_idEPS`),
   ADD KEY `fk_Empleado_has_EPS_EPS1_idx` (`EPS_idEPS`),
   ADD KEY `fk_Empleado_has_EPS_Empleado1_idx` (`Empleado_idEmpleado`);
 
@@ -683,14 +736,13 @@ ALTER TABLE `empleado_has_eps`
 -- Indices de la tabla `entradas`
 --
 ALTER TABLE `entradas`
-  ADD PRIMARY KEY (`codEntradas`,`Empleado_idEmpleado`),
+  ADD PRIMARY KEY (`codEntradas`),
   ADD KEY `fk_Entradas_Empleado1_idx` (`Empleado_idEmpleado`);
 
 --
 -- Indices de la tabla `entradas_has_materia_prima`
 --
 ALTER TABLE `entradas_has_materia_prima`
-  ADD PRIMARY KEY (`Entradas_codEntradas`,`Materia_prima_codMateria_prima`),
   ADD KEY `fk_Entradas_has_Materia_prima_Materia_prima1_idx` (`Materia_prima_codMateria_prima`),
   ADD KEY `fk_Entradas_has_Materia_prima_Entradas1_idx` (`Entradas_codEntradas`);
 
@@ -710,7 +762,7 @@ ALTER TABLE `genero`
 -- Indices de la tabla `hijos`
 --
 ALTER TABLE `hijos`
-  ADD PRIMARY KEY (`idHijos`,`Empleado_idEmpleado`),
+  ADD PRIMARY KEY (`idHijos`),
   ADD KEY `fk_Hijos_Empleado_idx` (`Empleado_idEmpleado`);
 
 --
@@ -723,7 +775,7 @@ ALTER TABLE `lote`
 -- Indices de la tabla `materia_prima`
 --
 ALTER TABLE `materia_prima`
-  ADD PRIMARY KEY (`codMateria_prima`,`Unidad_medida_codUnidad_medida`),
+  ADD PRIMARY KEY (`codMateria_prima`),
   ADD KEY `fk_Materia_prima_Unidad_medida1_idx` (`Unidad_medida_codUnidad_medida`);
 
 --
@@ -736,7 +788,6 @@ ALTER TABLE `nivel_estudio`
 -- Indices de la tabla `nivel_estudio_has_empleado`
 --
 ALTER TABLE `nivel_estudio_has_empleado`
-  ADD PRIMARY KEY (`Nivel_estudio_idNivel_estudio`,`Empleado_idEmpleado`),
   ADD KEY `fk_Nivel_estudio_has_Empleado_Empleado1_idx` (`Empleado_idEmpleado`),
   ADD KEY `fk_Nivel_estudio_has_Empleado_Nivel_estudio1_idx` (`Nivel_estudio_idNivel_estudio`);
 
@@ -744,7 +795,7 @@ ALTER TABLE `nivel_estudio_has_empleado`
 -- Indices de la tabla `pedido`
 --
 ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`codPedido`,`Cliente_idCliente`),
+  ADD PRIMARY KEY (`codPedido`),
   ADD KEY `fk_Pedido_Cliente1_idx` (`Cliente_idCliente`);
 
 --
@@ -763,14 +814,13 @@ ALTER TABLE `presentacion`
 -- Indices de la tabla `produccion`
 --
 ALTER TABLE `produccion`
-  ADD PRIMARY KEY (`codProduccion`,`Empleado_idEmpleado`),
+  ADD PRIMARY KEY (`codProduccion`),
   ADD KEY `fk_Produccion_Empleado1_idx` (`Empleado_idEmpleado`);
 
 --
 -- Indices de la tabla `produccion_has_producto`
 --
 ALTER TABLE `produccion_has_producto`
-  ADD PRIMARY KEY (`Produccion_codProduccion`,`Producto_codProducto`),
   ADD KEY `fk_Produccion_has_Producto_Producto1_idx` (`Producto_codProducto`),
   ADD KEY `fk_Produccion_has_Producto_Produccion1_idx` (`Produccion_codProduccion`);
 
@@ -778,7 +828,7 @@ ALTER TABLE `produccion_has_producto`
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD PRIMARY KEY (`codProducto`,`Categoria_idCategoria`,`Unidad_medida_codUnidad_medida`,`Presentacion_codPresentacion`),
+  ADD PRIMARY KEY (`codProducto`),
   ADD KEY `fk_Producto_Categoria1_idx` (`Categoria_idCategoria`),
   ADD KEY `fk_Producto_Unidad_medida1_idx` (`Unidad_medida_codUnidad_medida`),
   ADD KEY `fk_Producto_Presentacion1_idx` (`Presentacion_codPresentacion`);
@@ -795,7 +845,6 @@ ALTER TABLE `producto_has_lote`
 -- Indices de la tabla `producto_has_materia_prima`
 --
 ALTER TABLE `producto_has_materia_prima`
-  ADD PRIMARY KEY (`Producto_codProducto`,`Materia_prima_codMateria_prima`),
   ADD KEY `fk_Producto_has_Materia_prima_Materia_prima1_idx` (`Materia_prima_codMateria_prima`),
   ADD KEY `fk_Producto_has_Materia_prima_Producto1_idx` (`Producto_codProducto`);
 
@@ -809,7 +858,6 @@ ALTER TABLE `profesion`
 -- Indices de la tabla `profesion_has_empleado`
 --
 ALTER TABLE `profesion_has_empleado`
-  ADD PRIMARY KEY (`Profesion_idProfesion`,`Empleado_idEmpleado`),
   ADD KEY `fk_Profesion_has_Empleado_Empleado1_idx` (`Empleado_idEmpleado`),
   ADD KEY `fk_Profesion_has_Empleado_Profesion1_idx` (`Profesion_idProfesion`);
 
@@ -823,7 +871,6 @@ ALTER TABLE `rol`
 -- Indices de la tabla `rol_has_ruta`
 --
 ALTER TABLE `rol_has_ruta`
-  ADD PRIMARY KEY (`Rol_idrol`,`Ruta_idruta`),
   ADD KEY `fk_Rol_has_Ruta_Ruta1_idx` (`Ruta_idruta`),
   ADD KEY `fk_Rol_has_Ruta_Rol1_idx` (`Rol_idrol`);
 
@@ -837,14 +884,13 @@ ALTER TABLE `ruta`
 -- Indices de la tabla `salidas`
 --
 ALTER TABLE `salidas`
-  ADD PRIMARY KEY (`codSalidas`,`Empleado_idEmpleado`),
+  ADD PRIMARY KEY (`codSalidas`),
   ADD KEY `fk_Salidas_Empleado1_idx` (`Empleado_idEmpleado`);
 
 --
 -- Indices de la tabla `salidas_has_materia_prima`
 --
 ALTER TABLE `salidas_has_materia_prima`
-  ADD PRIMARY KEY (`Salidas_codSalidas`,`Materia_prima_codMateria_prima`),
   ADD KEY `fk_Salidas_has_Materia_prima_Materia_prima1_idx` (`Materia_prima_codMateria_prima`),
   ADD KEY `fk_Salidas_has_Materia_prima_Salidas1_idx` (`Salidas_codSalidas`);
 
@@ -852,7 +898,6 @@ ALTER TABLE `salidas_has_materia_prima`
 -- Indices de la tabla `salidas_has_producto_has_lote`
 --
 ALTER TABLE `salidas_has_producto_has_lote`
-  ADD PRIMARY KEY (`Salidas_codSalidas`,`Producto_has_Lote_Producto_has_Lotecol`),
   ADD KEY `fk_Salidas_has_Producto_has_Lote_Producto_has_Lote1_idx` (`Producto_has_Lote_Producto_has_Lotecol`),
   ADD KEY `fk_Salidas_has_Producto_has_Lote_Salidas1_idx` (`Salidas_codSalidas`);
 
