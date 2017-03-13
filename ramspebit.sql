@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.6
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-03-2017 a las 00:42:27
--- Versión del servidor: 5.7.17-log
+-- Tiempo de generación: 09-03-2017 a las 13:51:39
+-- Versión del servidor: 10.1.16-MariaDB
 -- Versión de PHP: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -35,6 +35,9 @@ DELETE FROM pension WHERE idPension = _idPension$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarTipoContrato` (IN `_idTipo_contrato` INT(11))  NO SQL
 DELETE FROM tipo_contrato WHERE idTipo_contrato = _idTipo_contrato$$
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_EliminarTipoDocumento` (IN `_idTipo_documento` INT)  NO SQL
+DELETE FROM tipo_documento WHERE idTipo_documento = _idTipo_documento$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_InsertarCliente` (IN `_idCliente` INT(11), IN `_nombre` VARCHAR(45), IN `_apellidos` VARCHAR(45), IN `_nit` VARCHAR(45), IN `_telefono` VARCHAR(15), IN `_direccion` VARCHAR(45))  NO SQL
 INSERT INTO cliente (idCliente, nombre, apellidos, nit, telefono, direccion) VALUES(_idCliente, _nombre, _apellidos, _nit, _telefono, _direccion)$$
@@ -127,7 +130,7 @@ SELECT idTipo_contrato, descripcion from tipo_contrato$$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ListarTipoDocumento` ()  NO SQL
 SELECT idTipo_documento, descripcion from tipo_documento$$
 
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarCliente` (IN `_idCliente` INT(11), IN `_nombre` INT(45), IN `_apellidos` INT(45), IN `_nit` INT(45), IN `_telefono` INT(15), IN `_direccion` INT(45))  NO SQL
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarCliente` (IN `_idCliente` INT(11), IN `_nombre` VARCHAR(45), IN `_apellidos` VARCHAR(45), IN `_nit` VARCHAR(45), IN `_telefono` VARCHAR(15), IN `_direccion` VARCHAR(45))  NO SQL
 UPDATE cliente SET idCliente = _idCliente, nombre = _nombre, apellidos = _apellidos, nit = _nit, telefono = _telefono, direccion = _direccion WHERE idCliente = _idCliente$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarCuenta` (IN `_nombre_usuario` VARCHAR(45), IN `_contraseña` VARCHAR(100), IN `_correo_electronico` VARCHAR(100), IN `_imagen` VARCHAR(100), IN `_Rol_idrol` INT(11), IN `_idCuenta` INT(11))  NO SQL
@@ -150,9 +153,6 @@ descripcion = _descripcion WHERE idNivel_estudio = _idNivel_estudio$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_ModificarProfesion` (IN `_idProfesion` INT(11), IN `_descripcion` VARCHAR(45))  NO SQL
 UPDATE profesion set descripcion = _descripcion WHERE idProfesion = _idProfesion$$
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_TipoDocumento` (IN `_idTipo_documento` INT)  NO SQL
-DELETE FROM tipo_documento WHERE idTipo_documento = _idTipo_documento$$
 
 DELIMITER ;
 
@@ -202,7 +202,8 @@ CREATE TABLE `cliente` (
 INSERT INTO `cliente` (`idCliente`, `nombre`, `Apellidos`, `nit`, `telefono`, `direccion`) VALUES
 (11, 'Walberto', 'Mercado', '011', '1234567', 'Calle 70'),
 (22, 'Freddy', 'Sadder', '022', '0987654', 'Calle 71'),
-(33, 'Lucho', 'Protesta', '033', '7685940', 'Calle 51');
+(33, 'Lucho', 'Protesta', '033', '7685940', 'Calle 51'),
+(44, 'Adolf', 'Hitler', '044', '1234546', 'Calle berlin');
 
 -- --------------------------------------------------------
 
@@ -574,6 +575,7 @@ INSERT INTO `rol` (`idrol`, `nombre`, `descripcion`, `estado`) VALUES
 --
 
 CREATE TABLE `rol_has_ruta` (
+  `idrol_has_ruta` int(11) NOT NULL,
   `Rol_idrol` int(11) NOT NULL,
   `Ruta_idruta` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -643,8 +645,7 @@ CREATE TABLE `tipo_contrato` (
 --
 
 INSERT INTO `tipo_contrato` (`idTipo_contrato`, `descripcion`) VALUES
-(1, 'Definido'),
-(2, 'Indefinido');
+(1, 'Definido');
 
 -- --------------------------------------------------------
 
@@ -662,7 +663,7 @@ CREATE TABLE `tipo_documento` (
 --
 
 INSERT INTO `tipo_documento` (`idTipo_documento`, `descripcion`) VALUES
-(1233, 'cedula');
+(2, 'Tarjeta de identidad');
 
 -- --------------------------------------------------------
 
@@ -871,6 +872,7 @@ ALTER TABLE `rol`
 -- Indices de la tabla `rol_has_ruta`
 --
 ALTER TABLE `rol_has_ruta`
+  ADD PRIMARY KEY (`idrol_has_ruta`),
   ADD KEY `fk_Rol_has_Ruta_Ruta1_idx` (`Ruta_idruta`),
   ADD KEY `fk_Rol_has_Ruta_Rol1_idx` (`Rol_idrol`);
 
@@ -928,6 +930,11 @@ ALTER TABLE `unidad_medida`
 --
 ALTER TABLE `cuenta`
   MODIFY `idCuenta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT de la tabla `rol_has_ruta`
+--
+ALTER TABLE `rol_has_ruta`
+  MODIFY `idrol_has_ruta` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Restricciones para tablas volcadas
 --
