@@ -7,43 +7,45 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="<?= URL ?>bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo URL ?>bootstrap/css/bootstrap.min.css">
+
+  <script src="<?php echo URL; ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?= URL ?>dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="<?php echo URL ?>dist/css/AdminLTE.css">
 
-    <link rel="stylesheet" href="<?= URL ?>dist/css/skins/_all-skins.css">
+    <link rel="stylesheet" href="<?php echo URL ?>dist/css/skins/_all-skins.css">
 
-    <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/flat/blue.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/iCheck/flat/blue.css">
 
-    <link rel="stylesheet" href="<?= URL ?>plugins/morris/morris.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/morris/morris.css">
 
-    <link rel="stylesheet" href="<?= URL ?>plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/select2/select2.min.css">
 
-    <link rel="stylesheet" href="<?= URL ?>plugins/datepicker/datepicker3.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/jvectormap/jquery-jvectormap-1.2.2.css">
 
-    <link rel="stylesheet" href="<?= URL ?>plugins/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/datepicker/datepicker3.css">
 
-    <link rel="stylesheet" href="<?= URL ?>plugins/datatables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/daterangepicker/daterangepicker.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="<?php echo URL ?>plugins/datatables/dataTables.bootstrap.css">
 
-   <link rel="stylesheet" href="<?= URL ?>plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <link rel="stylesheet" href="<?php echo URL ?>plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/timepicker/bootstrap-timepicker.min.css">
+   <link rel="stylesheet" href="<?php echo URL ?>plugins/colorpicker/bootstrap-colorpicker.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/select2/select2.min.css">
+  <link rel="stylesheet" href="<?php echo URL ?>plugins/timepicker/bootstrap-timepicker.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/fullcalendar/fullcalendar.min.css">
+  <link rel="stylesheet" href="<?php echo URL ?>plugins/fullcalendar/fullcalendar.min.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/iCheck/all.css">
+  <link rel="stylesheet" href="<?php echo URL ?>plugins/iCheck/all.css">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/fullcalendar/fullcalendar.print.css" media="print">
+  <link rel="stylesheet" href="<?php echo URL ?>plugins/fullcalendar/fullcalendar.print.css" media="print">
 
-  <link rel="stylesheet" href="<?= URL ?>plugins/normalize/normalize.css">
+  <link rel="stylesheet" href="<?php echo URL ?>css/boton.css">
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -219,7 +221,7 @@
                   <a href="#" class="btn btn-default btn-flat">Perfil</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Salir</a>
+                  <a href="<?=URL ?>login/index" class="btn btn-default btn-flat">Salir</a>
                 </div>
               </li>
             </ul>
@@ -240,7 +242,12 @@
           <img src="<?= URL ?>dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p>
+            Estiven
+            <?php
+          //      echo '<a class="mbr-buttons__link btn text-white" href="?view=perfil&id='.$_SESSION['app_id'].'">'. strtoupper($_users[$_SESSION['app_id']]['user']) .'</a></li><li class="mbr-navbar__item">';
+            ?>
+          </p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -279,6 +286,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?= URL ?>gusuario/index">Gestión de Empleado</a></li>
+            <li><a href="<?= URL ?>adicional/index">Información Adicional</a></li>
+
           </ul>
         </li>
         <li class="treeview">
@@ -291,7 +300,6 @@
             <li><a href="#">Materia Prima</a></li>
             <li><a href="#">Entradas</a></li>
             <li><a href="#">Salidas</a></li>
-            <li><a href="#">Producto</a></li>
             <li><a href="#">Unidades de Medida</a></li>
           </ul>
         </li>

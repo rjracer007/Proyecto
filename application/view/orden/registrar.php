@@ -5,7 +5,7 @@
       <div class="box box-primary">
       <center>
         <div class="box-header with-border">
-          <h1>Registro de Orden</h1>
+          <h1>Registro de Orden de Producción</h1>
         </div>
                 <h6>Los campos con (*) son obligatorios</h6>
         </center>
@@ -14,7 +14,7 @@
         <div class="col-md-8">
           <div class="form-group">
               <label for="exampleInputEmail1">*Código:</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Introduzca su el código del cliente">
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
             </div>
           </div>
               <div class="col-md-8">
@@ -29,11 +29,11 @@
                   <input type="date" class="form-control" value="<?php echo date("Y-m-d");?>">
                 </div>
               </div>
-      
+
           <div class="col-md-8">
           <div class="form-group">
               <label for="exampleInputEmail1">*Identificación del Empleado:</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Introduzca su el nombre del cliente">
+              <input type="text" class="form-control" id="exampleInputEmail1" placeholder="">
             </div>
           </div>
           <div class="col-md-8">

@@ -37,4 +37,13 @@ class Controller
         require APP . 'model/'.$nombreModel.'.php';
         return new $nombreModel($this->db);
     }
+//public function rows($query) {
+  //return mysqli_num_rows($query);
+//}
+//public function liberar($query) {
+  //return mysqli_free_result($query);
+//}
+//public function recorrer($query) {
+  //return mysqli_fetch_array($query);
+//}
 }

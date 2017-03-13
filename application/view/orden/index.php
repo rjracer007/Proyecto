@@ -1,4 +1,5 @@
 <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
   <section class="content-header">
     <h1>
       Ramsperbit
@@ -9,14 +10,12 @@
     <section class="content">
       <div class="row">
         <div class="col-xs-12">
-          <!-- /.box -->
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Orden de Produccion</h3>
+              <h3 class="box-title">Orden de Producción</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <a href="<?= URL ?>orden/registrar" id="are" class="btn btn-success"><i class="glyphicon glyphicon-plus-sign">Registrar</i></a>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
@@ -53,17 +52,28 @@
                 </tr>
                 </tfoot>
               </table>
-            </div>
-            <!-- /.box-body -->
+              <a  class='boton' href="<?= URL ?>orden/registrar" ></a>
           </div>
-          <!-- /.box -->
+            <!-- /.box-body -->
         </div>
-        <!-- /.col -->
+          <!-- /.box -->
       </div>
+        <!-- /.col -->
+    </div>
       <!-- /.row -->
-    </section>
+  </section>
     <!-- /.content -->
-  </div>
-
-<!-- ./wrapper -->
-<!-- jQuery 2.2.3 -->
+</div>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false
+    });
+  });
+</script>
